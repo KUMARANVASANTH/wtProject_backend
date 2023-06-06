@@ -23,7 +23,7 @@ const port = process.env.port;
 
 app.listen(port,()=>{console.log("Listening at the port "+port)})
 
-mongoose.connect(process.env.db)
+mongoose.connect(process.env.db, { useNewUrlParser: true, useUnifiedTopology: true })
 .then(()=>{console.log("db connected")})
 .catch((err)=>{console.log(err)})
 
